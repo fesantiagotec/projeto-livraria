@@ -19,6 +19,7 @@ public class Principal {
         Scanner scanner = new Scanner(System.in);
         int opcaoMenu;
         int opcaoCategoria;
+
         //CaixaEmpresa caixaEmpresa = new CaixaEmpresa();
         Double dinheiroEmCaixaDaEmpresa = 1000.00;
 
@@ -55,6 +56,7 @@ public class Principal {
 
                     switch (opcaoCategoria) {
                         case 1:
+
                             AlbumDeMusica musica = new AlbumDeMusica();
 
                             musica.setId(contId + 1);
@@ -1033,6 +1035,13 @@ public class Principal {
                     break;
                 default:
                     System.out.println("Operação Inválida");
+            }
+
+            System.out.println("Deseja retornar ao menu principal? (S/N)");
+            String respostaRetornarMenu = scanner.nextLine();
+
+            if (respostaRetornarMenu.equalsIgnoreCase("N")) {
+                opcaoMenu = 10;
             }
 
         } while (opcaoMenu != 10 && opcaoMenu <= 9);
