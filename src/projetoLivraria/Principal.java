@@ -27,21 +27,7 @@ public class Principal {
         Double dinheiroEmCaixaDaEmpresa = 1000.00;
 
         do {
-            System.out.println();
-            System.out.println("Bem vindos a Livraria - Good Vibes");
-            System.out.println("Escolha um item do menu: ");
-            System.out.println("1 - Cadastrar produto");
-            System.out.println("2 - Editar produto cadastrado");
-            System.out.println("3 - Remover produto cadastrado");
-            System.out.println("4 - Visualizar produtos cadastrados");
-            System.out.println("5 - Visualizar o quantitativo de produtos em estoque (por categoria)");
-            System.out.println("6 - Visualizar listagem completa de produtos em estoque (geral)");
-            System.out.println("7 - Visualizar listagem de produtos em estoque (por categoria)");
-            System.out.println("8 - Realizar compra");
-            System.out.println("9 - Valor em caixa (dinheiro)");
-            System.out.println("10 - Sair");
-
-            System.out.println("Digite a opção:");
+            Principal.exibirMenuPrincipal();
             opcaoMenu = scanner.nextInt();
 
             switch (opcaoMenu) {
@@ -1158,5 +1144,23 @@ public class Principal {
 
     }
 
+    public static void exibirMenuPrincipal() {
+        System.out.println();
+        System.out.println("Bem vindos a Livraria - Good Vibes");
+        System.out.println("Escolha um item do menu: ");
+        System.out.println("1 - Cadastrar produto");
+        System.out.println("2 - Editar produto cadastrado");
+        System.out.println("3 - Remover produto cadastrado");
+        System.out.println("4 - Visualizar produtos cadastrados");
+        System.out.println("5 - Visualizar o quantitativo de produtos em estoque (por categoria)");
+        System.out.println("6 - Visualizar listagem completa de produtos em estoque (geral)");
+        System.out.println("7 - Visualizar listagem de produtos em estoque (por categoria)");
+        System.out.println("8 - Realizar compra");
+        System.out.println("9 - Valor em caixa (dinheiro)");
+        System.out.println("10 - Sair");
+
+        System.out.println("Digite a opção:");
+
+    }
 
 }
