@@ -1,4 +1,6 @@
-package projetoLivraria;
+package projetoLivraria.Produtos;
+
+import projetoLivraria.Produto;
 
 public class Jogo extends Produto {
     //distribuidora, gêneros e estúdio.

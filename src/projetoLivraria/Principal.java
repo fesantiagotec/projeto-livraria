@@ -1,11 +1,14 @@
 package projetoLivraria;
 
+import projetoLivraria.Produtos.*;
+import projetoLivraria.Util.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-    static Integer contId = 0;
+    public static Integer contId = 0;
 
     public static void main (String[] args) {
 
@@ -56,126 +59,24 @@ public class Principal {
 
                     switch (opcaoCategoria) {
                         case 1:
-
-                            AlbumDeMusica musica = new AlbumDeMusica();
-
-                            musica.setId(contId + 1);
+                            AlbumDeMusicaHelper.cadastrarAlbumDeMusica(scanner, contId, listaAlbunsDeMusica);
                             contId = contId + 1;
-
-                            System.out.println("Qual o nome da música que deseja cadastrar?");
-                            scanner.nextLine();
-                            musica.setNome(scanner.nextLine());
-                            System.out.println("Qual preço da música que deseja cadastrar?");
-                            musica.setPreco(scanner.nextDouble());
-                            System.out.println("Quais os músicos da banda que deseja cadastrar?");
-                            scanner.nextLine();
-                            musica.setMusicosBanda(scanner.nextLine());
-                            System.out.println("Qual o genero musical que deseja cadastrar?");
-                            musica.setGenero(scanner.nextLine());
-                            System.out.println("Qual o selo da música que deseja cadastrar?");
-                            musica.setSelo(scanner.nextLine());
-
-                            listaAlbunsDeMusica.add(musica);
-
-                            System.out.println("Produto cadastrado com sucesso!");
-                            System.out.println();
-
                             break;
                         case 2:
-                            Brinquedo brinquedo = new Brinquedo();
-
-                            brinquedo.setId(contId + 1);
+                            BrinquedoHelper.cadastrarBrinquedo(scanner, contId, listaBrinquedos);
                             contId = contId + 1;
-
-                            System.out.println("Qual o nome do brinquedo que deseja cadastrar?");
-                            scanner.nextLine();
-                            brinquedo.setNome(scanner.nextLine());
-                            System.out.println("Qual preço do brinquedo que deseja cadastrar?");
-                            brinquedo.setPreco(scanner.nextDouble());
-                            System.out.println("Qual o tipo de brinquedo que deseja cadastrar?");
-                            scanner.nextLine();
-                            brinquedo.setTipo(scanner.nextLine());
-
-                            listaBrinquedos.add(brinquedo);
-
-                            System.out.println("Produto cadastrado com sucesso!");
-                            System.out.println();
                             break;
                         case 3:
-                            Filme filme = new Filme();
-
-                            filme.setId(contId + 1);
+                            FilmeHelper.cadastrarFilme(scanner,contId, listaFilmes);
                             contId = contId + 1;
-
-                            System.out.println("Qual o nome do filme que deseja cadastrar?");
-                            scanner.nextLine();
-                            filme.setNome(scanner.nextLine());
-                            System.out.println("Qual preço do filme que deseja cadastrar?");
-                            filme.setPreco(scanner.nextDouble());
-                            System.out.println("Qual o estudio do filme que deseja cadastrar?");
-                            scanner.nextLine();
-                            filme.setEstudio(scanner.nextLine());
-                            System.out.println("Qual o diretor do filme que deseja cadastrar?");
-                            filme.setDiretor(scanner.nextLine());
-                            System.out.println("Qual o genero do filme que deseja cadastrar?");
-                            filme.setGenero(scanner.nextLine());
-                            System.out.println("Qual o produtor do filme que deseja cadastrar?");
-                            filme.setProdutor(scanner.nextLine());
-
-                            listaFilmes.add(filme);
-
-                            System.out.println("Produto cadastrado com sucesso!");
-                            System.out.println();
                             break;
                         case 4:
-
-                            Jogo jogo = new Jogo();
-
-                            jogo.setId(contId + 1);
+                            JogoHelper.cadastrarJogo(scanner,contId, listaJogos);
                             contId = contId + 1;
-
-                            System.out.println("Qual o nome do jogo que deseja cadastrar?");
-                            scanner.nextLine();
-                            jogo.setNome(scanner.nextLine());
-                            System.out.println("Qual preço do jogo que deseja cadastrar?");
-                            jogo.setPreco(scanner.nextDouble());
-                            System.out.println("Qual o estudio do filme que deseja cadastrar?");
-                            scanner.nextLine();
-                            jogo.setEstudio(scanner.nextLine());
-                            System.out.println("Qual a distribudora do filme que deseja cadastrar?");
-                            jogo.setDistribuidora(scanner.nextLine());
-                            System.out.println("Qual o genero do filme que deseja cadastrar?");
-                            jogo.setGenero(scanner.nextLine());
-
-                            listaJogos.add(jogo);
-
-                            System.out.println("Produto cadastrado com sucesso!");
-                            System.out.println();
-
                             break;
                         case 5:
-                            Livro livro = new Livro();
-
-                            livro.setId(contId + 1);
+                            LivroHelper.cadastrarLivro(scanner, contId, listaLivros);
                             contId = contId + 1;
-
-                            System.out.println("Qual o nome do livro que deseja cadastrar?");
-                            scanner.nextLine();
-                            livro.setNome(scanner.nextLine());
-                            System.out.println("Qual o preço do livro que deseja cadastrar?");
-                            livro.setPreco(scanner.nextDouble());
-                            System.out.println("Qual o genero do livro que deseja cadastrar?");
-                            scanner.nextLine();
-                            livro.setGenero(scanner.nextLine());
-                            System.out.println("Qual o escritor do livro que deseja cadastrar?");
-                            livro.setEscritor(scanner.nextLine());
-                            System.out.println("Qual a editora do livro que deseja cadastrar?");
-                            livro.setEditora(scanner.nextLine());
-
-                            listaLivros.add(livro);
-
-                            System.out.println("Produto cadastrado com sucesso!");
-                            System.out.println();
                             break;
                         default:
                             System.out.println("Operação Inválida!");

@@ -1,4 +1,6 @@
-package projetoLivraria;
+package projetoLivraria.Produtos;
+
+import projetoLivraria.Produto;
 
 public class Livro extends Produto {
 

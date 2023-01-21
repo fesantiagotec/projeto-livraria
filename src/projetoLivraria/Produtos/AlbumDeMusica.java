@@ -1,4 +1,6 @@
-package projetoLivraria;
+package projetoLivraria.Produtos;
+
+import projetoLivraria.Produto;
 
 public class AlbumDeMusica extends Produto {
     //músicos/bandas, gêneros e selos

@@ -1,4 +1,6 @@
-package projetoLivraria;
+package projetoLivraria.Produtos;
+
+import projetoLivraria.Produto;
 
 public class Filme extends Produto {
     //estúdio, diretores, gêneros e produtores.
