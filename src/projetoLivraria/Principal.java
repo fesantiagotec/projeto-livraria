@@ -94,14 +94,14 @@ public class Principal {
                     System.out.println("Digite a opção:");
                     opcaoCategoria = scanner.nextInt();
 
-                    String nomeProdutoAlterar;
-                    Double valorAtualizado;
+                    Integer idProdutoAlterar;
 
                     switch (opcaoCategoria) {
                         case 1:
 
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Albuns de Música disponíveis em estoque");
+
                             for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
                                 System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
                                 System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
@@ -112,16 +112,59 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Álbum de Músicas que deseja alterar dados:");
+                            System.out.println("Digite o ID do Álbum de Músicas que deseja alterar dados:");
                             scanner.nextLine();
-                            nomeProdutoAlterar = scanner.nextLine();
-                            System.out.println("Digite o valor preço que substituirá o atual:");
-                            valorAtualizado = scanner.nextDouble();
+                            idProdutoAlterar = scanner.nextInt();
 
                             for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
-                                if (nomeProdutoAlterar.equals(objetoListaAlbumDeMusica.getNome())) {
-                                    objetoListaAlbumDeMusica.setPreco(valorAtualizado);//alterado preço do produto
-                                    System.out.println(objetoListaAlbumDeMusica.getPreco());
+                                if (idProdutoAlterar.equals(objetoListaAlbumDeMusica.getId())) {
+                                    System.out.println("Produto encontrado no estoque!");
+                                    System.out.println();
+                                    System.out.println("Qual dado deseja alterar?");
+                                    System.out.println("1 - Nome");
+                                    System.out.println("2 - Preço");
+                                    System.out.println("3 - Músicos da Banda");
+                                    System.out.println("4 - Gênero");
+                                    System.out.println("5 - Selo");
+                                    System.out.println("Digite a opção:");
+                                    Integer opcaoDado = scanner.nextInt();
+
+                                    switch (opcaoDado) {
+                                        case 1:
+                                            System.out.println("Digite o novo nome que substituirá o atual:");
+                                            scanner.nextLine();
+                                            String nomeAlterado = scanner.nextLine();
+                                            objetoListaAlbumDeMusica.setNome(nomeAlterado);//alterado dado do produto
+                                            System.out.println(objetoListaAlbumDeMusica.getNome());
+                                            break;
+                                        case 2:
+                                            System.out.println("Digite o novo preço que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaAlbumDeMusica.setPreco(scanner.nextDouble());//alterado dado do produto
+                                            System.out.println(objetoListaAlbumDeMusica.getPreco());
+                                            break;
+                                        case 3:
+                                            System.out.println("Digite os novos músicos da banda que substituirão os atuais:");
+                                            scanner.nextLine();
+                                            objetoListaAlbumDeMusica.setMusicosBanda(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaAlbumDeMusica.getMusicosBanda());
+                                            break;
+                                        case 4:
+                                            System.out.println("Digite o novo genero que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaAlbumDeMusica.setGenero(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaAlbumDeMusica.getGenero());
+                                            break;
+                                        case 5:
+                                            System.out.println("Digite o novo selo que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaAlbumDeMusica.setSelo(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaAlbumDeMusica.getSelo());
+                                            break;
+                                        default:
+                                            System.out.println("Operação Inválida!");
+                                    }
+                                    System.out.println("Dado alterado com sucesso");
                                 }
                             }
                             //Reimprimir só para conferir que foi alterado
@@ -136,9 +179,8 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Dado do Produto alterado com sucesso!");
                             break;
-                        case 2:
+                            case 2:
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
                             for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
@@ -149,16 +191,45 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Brinquedo que deseja alterar dados:");
+                            System.out.println("Digite o ID do Brinquedo que deseja alterar dados:");
                             scanner.nextLine();
-                            nomeProdutoAlterar = scanner.nextLine();
-                            System.out.println("Digite o valor preço que substituirá o atual:");
-                            valorAtualizado = scanner.nextDouble();
+                            idProdutoAlterar = scanner.nextInt();
 
                             for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
-                                if (nomeProdutoAlterar.equals(objetoListaBrinquedo.getNome())) {
-                                    objetoListaBrinquedo.setPreco(valorAtualizado);//alterado preço do produto
-                                    System.out.println(objetoListaBrinquedo.getPreco());
+                                if (idProdutoAlterar.equals(objetoListaBrinquedo.getId())) {
+                                    System.out.println("Produto encontrado no estoque!");
+                                    System.out.println();
+                                    System.out.println("Qual dado deseja alterar?");
+                                    System.out.println("1 - Nome");
+                                    System.out.println("2 - Preço");
+                                    System.out.println("3 - Tipo");
+                                    System.out.println("Digite a opção:");
+                                    Integer opcaoDado = scanner.nextInt();
+
+                                    switch (opcaoDado) {
+                                        case 1:
+                                            System.out.println("Digite o novo nome que substituirá o atual:");
+                                            scanner.nextLine();
+                                            String nomeAlterado = scanner.nextLine();
+                                            objetoListaBrinquedo.setNome(nomeAlterado);//alterado dado do produto
+                                            System.out.println(objetoListaBrinquedo.getNome());
+                                            break;
+                                        case 2:
+                                            System.out.println("Digite o novo preço que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaBrinquedo.setPreco(scanner.nextDouble());//alterado dado do produto
+                                            System.out.println(objetoListaBrinquedo.getPreco());
+                                            break;
+                                        case 3:
+                                            System.out.println("Digite o novo tipo que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaBrinquedo.setTipo(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaBrinquedo.getTipo());
+                                            break;
+                                        default:
+                                            System.out.println("Operação Inválida!");
+                                    }
+                                    System.out.println("Dado alterado com sucesso");
                                 }
                             }
                             //Reimprimir só para conferir que foi alterado
@@ -187,16 +258,66 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Filme que deseja alterar dados:");
+                            System.out.println("Digite o ID do Filme que deseja alterar dados:");
                             scanner.nextLine();
-                            nomeProdutoAlterar = scanner.nextLine();
-                            System.out.println("Digite o valor preço que substituirá o atual:");
-                            valorAtualizado = scanner.nextDouble();
+                            idProdutoAlterar = scanner.nextInt();
 
                             for (Filme objetoListaFilme: listaFilmes) {
-                                if (nomeProdutoAlterar.equals(objetoListaFilme.getNome())) {
-                                    objetoListaFilme.setPreco(valorAtualizado);//alterado preço do produto
-                                    System.out.println(objetoListaFilme.getPreco());
+                                if (idProdutoAlterar.equals(objetoListaFilme.getId())) {
+                                    System.out.println("Produto encontrado no estoque!");
+                                    System.out.println();
+                                    System.out.println("Qual dado deseja alterar?");
+                                    System.out.println("1 - Nome");
+                                    System.out.println("2 - Preço");
+                                    System.out.println("3 - Estúdio");
+                                    System.out.println("4 - Diretor");
+                                    System.out.println("5 - Gênero");
+                                    System.out.println("6 - Produtor");
+                                    System.out.println("Digite a opção:");
+                                    Integer opcaoDado = scanner.nextInt();
+
+                                    switch (opcaoDado) {
+                                        case 1:
+                                            System.out.println("Digite o novo nome que substituirá o atual:");
+                                            scanner.nextLine();
+                                            String nomeAlterado = scanner.nextLine();
+                                            objetoListaFilme.setNome(nomeAlterado);//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getNome());
+                                            break;
+                                        case 2:
+                                            System.out.println("Digite o novo preço que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaFilme.setPreco(scanner.nextDouble());//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getPreco());
+                                            break;
+                                        case 3:
+                                            System.out.println("Digite o novo estúdio que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaFilme.setEstudio(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getEstudio());
+                                            break;
+                                        case 4:
+                                            System.out.println("Digite o novo diretor que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaFilme.setDiretor(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getDiretor());
+                                            break;
+                                        case 5:
+                                            System.out.println("Digite o novo genero que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaFilme.setGenero(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getGenero());
+                                            break;
+                                        case 6:
+                                            System.out.println("Digite o novo produtor que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaFilme.setProdutor(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaFilme.getProdutor());
+                                            break;
+                                        default:
+                                            System.out.println("Operação Inválida!");
+                                    }
+                                    System.out.println("Dado alterado com sucesso");
                                 }
                             }
 
@@ -229,16 +350,59 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Jogo que deseja alterar dados:");
+                            System.out.println("Digite o ID do Jogo que deseja alterar dados:");
                             scanner.nextLine();
-                            nomeProdutoAlterar = scanner.nextLine();
-                            System.out.println("Digite o valor preço que substituirá o atual:");
-                            valorAtualizado = scanner.nextDouble();
+                            idProdutoAlterar = scanner.nextInt();
 
                             for (Jogo objetoListaJogo: listaJogos) {
-                                if (nomeProdutoAlterar.equals(objetoListaJogo.getNome())) {
-                                    objetoListaJogo.setPreco(valorAtualizado);//alterado preço do produto
-                                    System.out.println(objetoListaJogo.getPreco());
+                                if (idProdutoAlterar.equals(objetoListaJogo.getId())) {
+                                    System.out.println("Produto encontrado no estoque!");
+                                    System.out.println();
+                                    System.out.println("Qual dado deseja alterar?");
+                                    System.out.println("1 - Nome");
+                                    System.out.println("2 - Preço");
+                                    System.out.println("3 - Distribuidora");
+                                    System.out.println("4 - Gênero");
+                                    System.out.println("5 - Estúdio");
+                                    System.out.println("Digite a opção:");
+                                    Integer opcaoDado = scanner.nextInt();
+
+                                    switch (opcaoDado) {
+                                        case 1:
+                                            System.out.println("Digite o novo nome que substituirá o atual:");
+                                            scanner.nextLine();
+                                            String nomeAlterado = scanner.nextLine();
+                                            objetoListaJogo.setNome(nomeAlterado);//alterado dado do produto
+                                            System.out.println(objetoListaJogo.getNome());
+                                            break;
+                                        case 2:
+                                            System.out.println("Digite o novo preço que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaJogo.setPreco(scanner.nextDouble());//alterado dado do produto
+                                            System.out.println(objetoListaJogo.getPreco());
+                                            break;
+                                        case 3:
+                                            System.out.println("Digite a nova distribuidora que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaJogo.setDistribuidora(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaJogo.getDistribuidora());
+                                            break;
+                                        case 4:
+                                            System.out.println("Digite o novo genero que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaJogo.setGenero(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaJogo.getGenero());
+                                            break;
+                                        case 5:
+                                            System.out.println("Digite o novo estúdio que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaJogo.setEstudio(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaJogo.getEstudio());
+                                            break;
+                                        default:
+                                            System.out.println("Operação Inválida!");
+                                    }
+                                    System.out.println("Dado alterado com sucesso");
                                 }
                             }
 
@@ -271,16 +435,59 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Livro que deseja alterar dados:");
+                            System.out.println("Digite o ID do Livro que deseja alterar dados:");
                             scanner.nextLine();
-                            nomeProdutoAlterar = scanner.nextLine();
-                            System.out.println("Digite o valor preço que substituirá o atual:");
-                            valorAtualizado = scanner.nextDouble();
+                            idProdutoAlterar = scanner.nextInt();
 
                             for (Livro objetoListaLivro: listaLivros) {
-                                if (nomeProdutoAlterar.equals(objetoListaLivro.getNome())) {
-                                    objetoListaLivro.setPreco(valorAtualizado);//alterado preço do produto
-                                    System.out.println(objetoListaLivro.getPreco());
+                                if (idProdutoAlterar.equals(objetoListaLivro.getId())) {
+                                    System.out.println("Produto encontrado no estoque!");
+                                    System.out.println();
+                                    System.out.println("Qual dado deseja alterar?");
+                                    System.out.println("1 - Nome");
+                                    System.out.println("2 - Preço");
+                                    System.out.println("3 - Gênero");
+                                    System.out.println("4 - Escritor");
+                                    System.out.println("5 - Editora");
+                                    System.out.println("Digite a opção:");
+                                    Integer opcaoDado = scanner.nextInt();
+
+                                    switch (opcaoDado) {
+                                        case 1:
+                                            System.out.println("Digite o novo nome que substituirá o atual:");
+                                            scanner.nextLine();
+                                            String nomeAlterado = scanner.nextLine();
+                                            objetoListaLivro.setNome(nomeAlterado);//alterado dado do produto
+                                            System.out.println(objetoListaLivro.getNome());
+                                            break;
+                                        case 2:
+                                            System.out.println("Digite o novo preço que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaLivro.setPreco(scanner.nextDouble());//alterado dado do produto
+                                            System.out.println(objetoListaLivro.getPreco());
+                                            break;
+                                        case 3:
+                                            System.out.println("Digite o novo genero que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaLivro.setGenero(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaLivro.getGenero());
+                                            break;
+                                        case 4:
+                                            System.out.println("Digite o novo escritor que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaLivro.setEscritor(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaLivro.getEscritor());
+                                            break;
+                                        case 5:
+                                            System.out.println("Digite o novo editora que substituirá o atual:");
+                                            scanner.nextLine();
+                                            objetoListaLivro.setEditora(scanner.nextLine());//alterado dado do produto
+                                            System.out.println(objetoListaLivro.getEditora());
+                                            break;
+                                        default:
+                                            System.out.println("Operação Inválida!");
+                                    }
+                                    System.out.println("Dado alterado com sucesso");
                                 }
                             }
 
@@ -950,5 +1157,6 @@ public class Principal {
         System.out.println("Bye bye. Até a próxima!");
 
     }
+
 
 }
