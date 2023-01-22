@@ -1093,8 +1093,8 @@ public class Principal {
 
     public static void retornarMenuPrincipal (Scanner scanner, Integer opcaoMenu) {
         System.out.println("Deseja retornar ao menu principal? (S/N)");
-        scanner.nextLine();
         String respostaRetornarMenu = scanner.nextLine();
+        scanner.nextLine();
 
         if (respostaRetornarMenu.equalsIgnoreCase("N")) {
             opcaoMenu = 10;
