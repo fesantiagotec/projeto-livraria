@@ -1,5 +1,6 @@
 package projetoLivraria;
 
+import projetoLivraria.BancoDeDados.CaixaEmpresa;
 import projetoLivraria.Produtos.*;
 import projetoLivraria.Util.*;
 
@@ -23,8 +24,8 @@ public class Principal {
         int opcaoMenu;
         int opcaoCategoria;
 
-        //CaixaEmpresa caixaEmpresa = new CaixaEmpresa();
-        Double dinheiroEmCaixaDaEmpresa = 1000.00;
+        CaixaEmpresa caixaDaEmpresa = new CaixaEmpresa();
+        caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(1000.00);
 
         do {
             exibirMenuPrincipal();
@@ -60,7 +61,7 @@ public class Principal {
                             System.out.println("Operação Inválida!");
                     }
                     break;
-                case 2: //Menu 2 - Editar produto cadastrado
+                case 2: //Menu 2 - Alterar produto cadastrado
 
                     exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
@@ -447,7 +448,7 @@ public class Principal {
                     exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
-                    String nomeProdutoRemover;
+                    Integer idProdutoRemover;
 
                     switch (opcaoCategoria) {
                         case 1:
@@ -464,12 +465,12 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Álbum de Músicas que deseja remover:");
+                            System.out.println("Digite o ID do Álbum de Músicas que deseja remover:");
                             scanner.nextLine();
-                            nomeProdutoRemover = scanner.nextLine();
+                            idProdutoRemover = scanner.nextInt();
 
                             for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
-                                if (nomeProdutoRemover.equals(objetoListaAlbumDeMusica.getNome())) {
+                                if (idProdutoRemover.equals(objetoListaAlbumDeMusica.getId())) {
                                     listaAlbunsDeMusica.remove(objetoListaAlbumDeMusica);//retirado do estoque
                                 }
                             }
@@ -498,12 +499,12 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Brinquedo que deseja remover:");
+                            System.out.println("Digite o ID do Brinquedo que deseja remover:");
                             scanner.nextLine();
-                            nomeProdutoRemover = scanner.nextLine();
+                            idProdutoRemover = scanner.nextInt();
 
                             for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
-                                if (nomeProdutoRemover.equals(objetoListaBrinquedo.getNome())) {
+                                if (idProdutoRemover.equals(objetoListaBrinquedo.getId())) {
                                     listaBrinquedos.remove(objetoListaBrinquedo);//retirado do estoque
                                 }
                             }
@@ -533,12 +534,12 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Filme que deseja remover:");
+                            System.out.println("Digite o ID do Filme que deseja remover:");
                             scanner.nextLine();
-                            nomeProdutoRemover = scanner.nextLine();
+                            idProdutoRemover = scanner.nextInt();
 
                             for (Filme objetoListaFilme: listaFilmes) {
-                                if (nomeProdutoRemover.equals(objetoListaFilme.getNome())) {
+                                if (idProdutoRemover.equals(objetoListaFilme.getId())) {
                                     listaFilmes.remove(objetoListaFilme);//retirado do estoque
                                 }
                             }
@@ -571,12 +572,12 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Jogo que deseja remover:");
+                            System.out.println("Digite o ID do Jogo que deseja remover:");
                             scanner.nextLine();
-                            nomeProdutoRemover = scanner.nextLine();
+                            idProdutoRemover = scanner.nextInt();
 
                             for (Jogo objetoListaJogo: listaJogos) {
-                                if (nomeProdutoRemover.equals(objetoListaJogo.getNome())) {
+                                if (idProdutoRemover.equals(objetoListaJogo.getId())) {
                                     listaJogos.remove(objetoListaJogo);//retirado do estoque
                                 }
                             }
@@ -609,12 +610,12 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do Livro que deseja remover:");
+                            System.out.println("Digite o ID do Livro que deseja remover:");
                             scanner.nextLine();
-                            nomeProdutoRemover = scanner.nextLine();
+                            idProdutoRemover = scanner.nextInt();
 
                             for (Livro objetoListaLivro: listaLivros) {
-                                if (nomeProdutoRemover.equals(objetoListaLivro.getNome())) {
+                                if (idProdutoRemover.equals(objetoListaLivro.getId())) {
                                     listaLivros.remove(objetoListaLivro);//retirado do estoque
                                 }
                             }
@@ -642,7 +643,7 @@ public class Principal {
 
                     switch (opcaoCategoria) {
                         case 1:
-                            System.out.println("Lista de Albuns de Música");
+                            System.out.println("----------> Lista de Albuns de Música <----------");
                             for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
                                 System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
                                 System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
@@ -654,7 +655,7 @@ public class Principal {
                             }
                             break;
                         case 2:
-                            System.out.println("Lista de Brinquedos");
+                            System.out.println("----------> Lista de Brinquedos <----------");
                             for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
                                 System.out.println("Id: " + objetoListaBrinquedo.getId());
                                 System.out.println("Nome: " + objetoListaBrinquedo.getNome());
@@ -664,7 +665,7 @@ public class Principal {
                             }
                             break;
                         case 3:
-                            System.out.println("Lista de Filmes");
+                            System.out.println("----------> Lista de Filmes <----------");
                             for (Filme objetoListaFilme : listaFilmes) {
                                 System.out.println("Id: " + objetoListaFilme.getId());
                                 System.out.println("Nome: " + objetoListaFilme.getNome());
@@ -677,7 +678,7 @@ public class Principal {
                             }
                             break;
                         case 4:
-                            System.out.println("Lista de Jogos");
+                            System.out.println("----------> Lista de Jogos <----------");
 
                             for (Jogo objetoListaJogo : listaJogos) {
                                 System.out.println("Id: " + objetoListaJogo.getId());
@@ -691,7 +692,7 @@ public class Principal {
 
                             break;
                         case 5:
-                            System.out.println("Lista de Livros");
+                            System.out.println("----------> Lista de Livros <----------");
                             for (Livro objetoListaLivro : listaLivros) {
                                 System.out.println("Id: " + objetoListaLivro.getId());
                                 System.out.println("Nome: " + objetoListaLivro.getNome());
@@ -718,23 +719,19 @@ public class Principal {
                             System.out.println("O quantitativo de produtos do categoria Albuns de Música é " + quantitativoItensAlbumDeMusica);
                             break;
                         case 2:
-                            int quantitativoItensBrinquedo;
-                            quantitativoItensBrinquedo = listaBrinquedos.size();
+                            int quantitativoItensBrinquedo = listaBrinquedos.size();
                             System.out.println("O quantitativo de produtos da categoria Brinquedo é " + quantitativoItensBrinquedo);
                             break;
                         case 3:
-                            int quantitativoItensFilme;
-                            quantitativoItensFilme = listaFilmes.size();
+                            int quantitativoItensFilme = listaFilmes.size();
                             System.out.println("O quantitativo de produtos da categoria Filme é " + quantitativoItensFilme);
                             break;
                         case 4:
-                            int quantitativoItensJogo;
-                            quantitativoItensJogo = listaJogos.size();
+                            int quantitativoItensJogo = listaJogos.size();
                             System.out.println("O quantitativo de produtos da categoria Jogo é " + quantitativoItensJogo);
                             break;
                         case 5:
-                            int quantitativoItensLivro;
-                            quantitativoItensLivro = listaLivros.size();
+                            int quantitativoItensLivro = listaLivros.size();
                             System.out.println("O quantitativo de produtos da categoria Livro é " + quantitativoItensLivro);
                             break;
                         default:
@@ -797,7 +794,7 @@ public class Principal {
                 case 7: // Menu 7 - Visualizar listagem de produtos em estoque (por categoria)
                     System.out.println("-----> Lista completa de produtos em estoque (por categoria) <-----");
 
-                    System.out.println("Lista de Albuns de Música <-----");
+                    System.out.println("-----> Lista de Albuns de Música <-----");
                     for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
                         System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
                         System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
@@ -857,7 +854,7 @@ public class Principal {
                     exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
-                    String nomeProdutoCompra;
+                    Integer idProdutoCompra;
 
                     switch (opcaoCategoria) {
                         case 1:
@@ -871,19 +868,19 @@ public class Principal {
                                 System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
                                 System.out.println();
                             }
-                            System.out.println("Digite o nome do Álbum de Músicas que deseja comprar:");
+                            System.out.println("Digite o ID do Álbum de Músicas que deseja comprar:");
                             scanner.nextLine();
-                            nomeProdutoCompra = scanner.nextLine();
+                            idProdutoCompra = scanner.nextInt();
 
                             for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
-                                if (nomeProdutoCompra.equals(objetoListaAlbumDeMusica.getNome())) {
+                                if (idProdutoCompra.equals(objetoListaAlbumDeMusica.getId())) {
                                     listaAlbunsDeMusica.remove(objetoListaAlbumDeMusica);//retirado do estoque
-                                    dinheiroEmCaixaDaEmpresa = dinheiroEmCaixaDaEmpresa + objetoListaAlbumDeMusica.getPreco(); //valor pago adicionado ao caixa da empresa
+                                    caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa() + objetoListaAlbumDeMusica.getPreco()); //valor pago adicionado ao caixa da empresa
                                 }
                             }
 
                             System.out.println("Compra realizada com sucesso!");
-                            System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                            System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
                             for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
                                 System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
@@ -904,19 +901,19 @@ public class Principal {
                                 System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
                                 System.out.println();
                             }
-                            System.out.println("Digite o nome do brinquedo que deseja comprar:");
+                            System.out.println("Digite o ID do brinquedo que deseja comprar:");
                             scanner.nextLine();
-                            nomeProdutoCompra = scanner.nextLine();
+                            idProdutoCompra = scanner.nextInt();
 
                             for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
-                                if (nomeProdutoCompra.equals(objetoListaBrinquedo.getNome())) {
+                                if (idProdutoCompra.equals(objetoListaBrinquedo.getId())) {
                                     listaBrinquedos.remove(objetoListaBrinquedo);//retirado do estoque
-                                    dinheiroEmCaixaDaEmpresa = dinheiroEmCaixaDaEmpresa + objetoListaBrinquedo.getPreco();//valor pago adicionado ao caixa da empresa
+                                    caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa() + objetoListaBrinquedo.getPreco());//valor pago adicionado ao caixa da empresa
                                 }
                             }
 
                             System.out.println("Compra realizada com sucesso!");
-                            System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                            System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
                             for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
                                 System.out.println("Id: " + objetoListaBrinquedo.getId());
@@ -938,19 +935,19 @@ public class Principal {
                                 System.out.println("Produtor: " + objetoListaFilme.getProdutor());
                                 System.out.println();
                             }
-                            System.out.println("Digite o nome do filme que deseja comprar:");
+                            System.out.println("Digite o ID do filme que deseja comprar:");
                             scanner.nextLine();
-                            nomeProdutoCompra = scanner.nextLine();
+                            idProdutoCompra = scanner.nextInt();
 
                             for (Filme objetoListaFilme: listaFilmes) {
-                                if (nomeProdutoCompra.equals(objetoListaFilme.getNome())) {
+                                if (idProdutoCompra.equals(objetoListaFilme.getId())) {
                                     listaFilmes.remove(objetoListaFilme);//retirado do estoque
-                                    dinheiroEmCaixaDaEmpresa = dinheiroEmCaixaDaEmpresa + objetoListaFilme.getPreco();//valor pago adicionado ao caixa da empresa
+                                    caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa() + objetoListaFilme.getPreco());//valor pago adicionado ao caixa da empresa
                                 }
                             }
 
                             System.out.println("Compra realizada com sucesso!");
-                            System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                            System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
                             for (Filme objetoListaFilme : listaFilmes) {
                                 System.out.println("Id: " + objetoListaFilme.getId());
@@ -977,19 +974,19 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do jogo que deseja comprar:");
+                            System.out.println("Digite o ID do jogo que deseja comprar:");
                             scanner.nextLine();
-                            nomeProdutoCompra = scanner.nextLine();
+                            idProdutoCompra = scanner.nextInt();
 
                             for (Jogo objetoListaJogo: listaJogos) {
-                                if (nomeProdutoCompra.equals(objetoListaJogo.getNome())) {
+                                if (idProdutoCompra.equals(objetoListaJogo.getId())) {
                                     listaJogos.remove(objetoListaJogo);//retirado do estoque
-                                    dinheiroEmCaixaDaEmpresa = dinheiroEmCaixaDaEmpresa + objetoListaJogo.getPreco();//valor pago adicionado ao caixa da empresa
+                                    caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa() + objetoListaJogo.getPreco());//valor pago adicionado ao caixa da empresa
                                 }
                             }
 
                             System.out.println("Compra realizada com sucesso!");
-                            System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                            System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
                             for (Jogo objetoListaJogo : listaJogos) {
                                 System.out.println("Id: " + objetoListaJogo.getId());
@@ -1014,19 +1011,19 @@ public class Principal {
                                 System.out.println();
                             }
 
-                            System.out.println("Digite o nome do livro que deseja comprar:");
+                            System.out.println("Digite o ID do livro que deseja comprar:");
                             scanner.nextLine();
-                            nomeProdutoCompra = scanner.nextLine();
+                            idProdutoCompra = scanner.nextInt();
 
                             for (Livro objetoListaLivro: listaLivros) {
-                                if (nomeProdutoCompra.equals(objetoListaLivro.getNome())) {
+                                if (idProdutoCompra.equals(objetoListaLivro.getId())) {
                                     listaLivros.remove(objetoListaLivro);//retirado do estoque
-                                    dinheiroEmCaixaDaEmpresa = dinheiroEmCaixaDaEmpresa + objetoListaLivro.getPreco();//valor pago adicionado ao caixa da empresa
+                                    caixaDaEmpresa.setDinheiroEmCaixaDaEmpresa(caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa() + objetoListaLivro.getPreco());//valor pago adicionado ao caixa da empresa
                                 }
                             }
 
                             System.out.println("Compra realizada com sucesso!");
-                            System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                            System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
                             for (Livro objetoListaLivro : listaLivros) {
                                 System.out.println("Id: " + objetoListaLivro.getId());
@@ -1044,7 +1041,7 @@ public class Principal {
                     }
                     break;
                 case 9: // Menu 9 - Valor em caixa (dinheiro)
-                    System.out.println("Dinheiro em caixa atualizado " + dinheiroEmCaixaDaEmpresa);
+                    System.out.println("Dinheiro em caixa atualizado é R$ " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                     break;
                 default:
                     System.out.println("Operação Inválida");
@@ -1052,7 +1049,7 @@ public class Principal {
 
             System.out.println("Deseja retornar ao menu principal? (S/N)");
             String respostaRetornarMenu = scanner.nextLine();
-
+            
             if (respostaRetornarMenu.equalsIgnoreCase("N")) {
                 opcaoMenu = 10;
             }
@@ -1068,7 +1065,7 @@ public class Principal {
         System.out.println("Bem vindos a Livraria - Good Vibes");
         System.out.println("Escolha um item do menu: ");
         System.out.println("1 - Cadastrar produto");
-        System.out.println("2 - Editar produto cadastrado");
+        System.out.println("2 - Alterar produto cadastrado");
         System.out.println("3 - Remover produto cadastrado");
         System.out.println("4 - Visualizar produtos cadastrados");
         System.out.println("5 - Visualizar o quantitativo de produtos em estoque (por categoria)");
@@ -1083,8 +1080,8 @@ public class Principal {
     }
 
     public static void exibirMenuCategorias() {
-        System.out.println("Trabalhamos com várias categorias de produtos:");
-        System.out.println("Qual categoria de produto deseja remover?");
+        System.out.println("Trabalhamos com várias categorias de produtos!");
+        System.out.println("Qual categoria de produto deseja escolher?");
         System.out.println("1 - Albuns De Musica");
         System.out.println("2 - Brinquedos");
         System.out.println("3 - Filme");
