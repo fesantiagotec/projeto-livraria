@@ -27,20 +27,12 @@ public class Principal {
         Double dinheiroEmCaixaDaEmpresa = 1000.00;
 
         do {
-            Principal.exibirMenuPrincipal();
+            exibirMenuPrincipal();
             opcaoMenu = scanner.nextInt();
 
             switch (opcaoMenu) {
                 case 1: //Menu 1 - Cadastrar produto
-
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja cadastrar?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Game");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     switch (opcaoCategoria) {
@@ -70,14 +62,7 @@ public class Principal {
                     break;
                 case 2: //Menu 2 - Editar produto cadastrado
 
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja remover?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Jogo");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     Integer idProdutoAlterar;
@@ -104,15 +89,8 @@ public class Principal {
 
                             for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
                                 if (idProdutoAlterar.equals(objetoListaAlbumDeMusica.getId())) {
-                                    System.out.println("Produto encontrado no estoque!");
-                                    System.out.println();
-                                    System.out.println("Qual dado deseja alterar?");
-                                    System.out.println("1 - Nome");
-                                    System.out.println("2 - Preço");
-                                    System.out.println("3 - Músicos da Banda");
-                                    System.out.println("4 - Gênero");
-                                    System.out.println("5 - Selo");
-                                    System.out.println("Digite a opção:");
+                                    AlbumDeMusicaHelper.exibirMenuAtributosAlbumDeMusica();
+
                                     Integer opcaoDado = scanner.nextInt();
 
                                     switch (opcaoDado) {
@@ -183,13 +161,7 @@ public class Principal {
 
                             for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
                                 if (idProdutoAlterar.equals(objetoListaBrinquedo.getId())) {
-                                    System.out.println("Produto encontrado no estoque!");
-                                    System.out.println();
-                                    System.out.println("Qual dado deseja alterar?");
-                                    System.out.println("1 - Nome");
-                                    System.out.println("2 - Preço");
-                                    System.out.println("3 - Tipo");
-                                    System.out.println("Digite a opção:");
+                                    BrinquedoHelper.exibirMenuAtributosBrinquedo();
                                     Integer opcaoDado = scanner.nextInt();
 
                                     switch (opcaoDado) {
@@ -250,16 +222,7 @@ public class Principal {
 
                             for (Filme objetoListaFilme: listaFilmes) {
                                 if (idProdutoAlterar.equals(objetoListaFilme.getId())) {
-                                    System.out.println("Produto encontrado no estoque!");
-                                    System.out.println();
-                                    System.out.println("Qual dado deseja alterar?");
-                                    System.out.println("1 - Nome");
-                                    System.out.println("2 - Preço");
-                                    System.out.println("3 - Estúdio");
-                                    System.out.println("4 - Diretor");
-                                    System.out.println("5 - Gênero");
-                                    System.out.println("6 - Produtor");
-                                    System.out.println("Digite a opção:");
+                                    FilmeHelper.exibirMenuAtributosFilme();
                                     Integer opcaoDado = scanner.nextInt();
 
                                     switch (opcaoDado) {
@@ -342,15 +305,7 @@ public class Principal {
 
                             for (Jogo objetoListaJogo: listaJogos) {
                                 if (idProdutoAlterar.equals(objetoListaJogo.getId())) {
-                                    System.out.println("Produto encontrado no estoque!");
-                                    System.out.println();
-                                    System.out.println("Qual dado deseja alterar?");
-                                    System.out.println("1 - Nome");
-                                    System.out.println("2 - Preço");
-                                    System.out.println("3 - Distribuidora");
-                                    System.out.println("4 - Gênero");
-                                    System.out.println("5 - Estúdio");
-                                    System.out.println("Digite a opção:");
+                                    JogoHelper.exibirMenuAtributosJogo();
                                     Integer opcaoDado = scanner.nextInt();
 
                                     switch (opcaoDado) {
@@ -427,15 +382,7 @@ public class Principal {
 
                             for (Livro objetoListaLivro: listaLivros) {
                                 if (idProdutoAlterar.equals(objetoListaLivro.getId())) {
-                                    System.out.println("Produto encontrado no estoque!");
-                                    System.out.println();
-                                    System.out.println("Qual dado deseja alterar?");
-                                    System.out.println("1 - Nome");
-                                    System.out.println("2 - Preço");
-                                    System.out.println("3 - Gênero");
-                                    System.out.println("4 - Escritor");
-                                    System.out.println("5 - Editora");
-                                    System.out.println("Digite a opção:");
+                                    LivroHelper.exibirMenuAtributosLivro();
                                     Integer opcaoDado = scanner.nextInt();
 
                                     switch (opcaoDado) {
@@ -497,14 +444,7 @@ public class Principal {
 
                     break;
                 case 3: // Menu 3 - Remover produto cadastrado
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja remover?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Jogo");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     String nomeProdutoRemover;
@@ -697,14 +637,7 @@ public class Principal {
                     }
                     break;
                 case 4: // Menu 4 - Visualizar produtos cadastrados
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja visualizar os itens?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Jogo");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     switch (opcaoCategoria) {
@@ -775,14 +708,7 @@ public class Principal {
                     }
                     break;
                 case 5: // Menu 5 - Visualizar o quantitativo de produtos em estoque (por categoria)
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja visualizar o quantitativo?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Jogo");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     switch (opcaoCategoria) {
@@ -928,14 +854,7 @@ public class Principal {
 
                     break;
                 case 8: // Menu 8 - Realizar compra
-                    System.out.println("Trabalhamos com várias categorias de produtos:");
-                    System.out.println("Qual categoria de produto deseja visualizar para realizar a compra?");
-                    System.out.println("1 - Albuns De Musica");
-                    System.out.println("2 - Brinquedos");
-                    System.out.println("3 - Filme");
-                    System.out.println("4 - Jogo");
-                    System.out.println("5 - Livro");
-                    System.out.println("Digite a opção:");
+                    exibirMenuCategorias();
                     opcaoCategoria = scanner.nextInt();
 
                     String nomeProdutoCompra;
@@ -1161,6 +1080,17 @@ public class Principal {
 
         System.out.println("Digite a opção:");
 
+    }
+
+    public static void exibirMenuCategorias() {
+        System.out.println("Trabalhamos com várias categorias de produtos:");
+        System.out.println("Qual categoria de produto deseja remover?");
+        System.out.println("1 - Albuns De Musica");
+        System.out.println("2 - Brinquedos");
+        System.out.println("3 - Filme");
+        System.out.println("4 - Jogo");
+        System.out.println("5 - Livro");
+        System.out.println("Digite a opção:");
     }
 
 }

@@ -36,4 +36,18 @@ public class FilmeHelper {
         return filme;
     }
 
+    public static void exibirMenuAtributosFilme () {
+        System.out.println("Produto encontrado no estoque!");
+        System.out.println();
+        System.out.println("Qual dado deseja alterar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Preço");
+        System.out.println("3 - Estúdio");
+        System.out.println("4 - Diretor");
+        System.out.println("5 - Gênero");
+        System.out.println("6 - Produtor");
+        System.out.println("Digite a opção:");
+
+    }
+
 }

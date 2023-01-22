@@ -30,4 +30,14 @@ public class BrinquedoHelper {
         return brinquedo;
     }
 
+    public static void exibirMenuAtributosBrinquedo() {
+        System.out.println("Produto encontrado no estoque!");
+        System.out.println();
+        System.out.println("Qual dado deseja alterar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Preço");
+        System.out.println("3 - Tipo");
+        System.out.println("Digite a opção:");
+
+    }
 }

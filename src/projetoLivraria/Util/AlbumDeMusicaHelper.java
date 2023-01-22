@@ -39,6 +39,18 @@ public class AlbumDeMusicaHelper {
         return musica;
     }
 
+    public static void exibirMenuAtributosAlbumDeMusica () {
+        System.out.println("Produto encontrado no estoque!");
+        System.out.println();
+        System.out.println("Qual dado deseja alterar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Preço");
+        System.out.println("3 - Músicos da Banda");
+        System.out.println("4 - Gênero");
+        System.out.println("5 - Selo");
+        System.out.println("Digite a opção:");
+    }
+
 //    public static void alterarDadosAlbumDeMusica (Scanner scanner, String nomeProdutoAlterar, Double valorAtualizado, List listaAlbunsDeMusica) {
 //        System.out.println("Digite o nome do Álbum de Músicas que deseja alterar dados:");
 //        scanner.nextLine();

@@ -34,4 +34,16 @@ public class JogoHelper {
         return jogo;
     }
 
+    public static void exibirMenuAtributosJogo() {
+        System.out.println("Produto encontrado no estoque!");
+        System.out.println();
+        System.out.println("Qual dado deseja alterar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Preço");
+        System.out.println("3 - Distribuidora");
+        System.out.println("4 - Gênero");
+        System.out.println("5 - Estúdio");
+        System.out.println("Digite a opção:");
+    }
+
 }

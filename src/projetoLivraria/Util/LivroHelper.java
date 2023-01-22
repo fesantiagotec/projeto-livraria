@@ -34,4 +34,16 @@ public class LivroHelper {
         return livro;
     }
 
+    public static void exibirMenuAtributosLivro () {
+        System.out.println("Produto encontrado no estoque!");
+        System.out.println();
+        System.out.println("Qual dado deseja alterar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Preço");
+        System.out.println("3 - Gênero");
+        System.out.println("4 - Escritor");
+        System.out.println("5 - Editora");
+        System.out.println("Digite a opção:");
+    }
+
 }
