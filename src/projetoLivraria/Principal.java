@@ -60,6 +60,7 @@ public class Principal {
                         default:
                             System.out.println("Operação Inválida!");
                     }
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 2: //Menu 2 - Alterar produto cadastrado
 
@@ -442,7 +443,7 @@ public class Principal {
                         default:
                             System.out.println("Operação Inválida!");
                     }
-
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 3: // Menu 3 - Remover produto cadastrado
                     exibirMenuCategorias();
@@ -636,6 +637,7 @@ public class Principal {
                         default:
                             System.out.println("Operação Inválida!");
                     }
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 4: // Menu 4 - Visualizar produtos cadastrados
                     exibirMenuCategorias();
@@ -707,6 +709,7 @@ public class Principal {
                         default:
                             System.out.println("Operação Inválida!");
                     }
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 5: // Menu 5 - Visualizar o quantitativo de produtos em estoque (por categoria)
                     exibirMenuCategorias();
@@ -737,6 +740,7 @@ public class Principal {
                         default:
                             System.out.println("Operação Inválida!");
                     }
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 6: // Menu 6 - Visualizar listagem completa de produtos em estoque (geral)
                     System.out.println("-----> Lista completa de produtos em estoque (geral) <-----");
@@ -789,7 +793,7 @@ public class Principal {
                         System.out.println("Editora: " + objetoListaLivro.getEditora());
                         System.out.println();
                     }
-
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 7: // Menu 7 - Visualizar listagem de produtos em estoque (por categoria)
                     System.out.println("-----> Lista completa de produtos em estoque (por categoria) <-----");
@@ -848,7 +852,7 @@ public class Principal {
                         System.out.println("Editora: " + objetoListaLivro.getEditora());
                         System.out.println();
                     }
-
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 8: // Menu 8 - Realizar compra
                     exibirMenuCategorias();
@@ -1034,27 +1038,24 @@ public class Principal {
                                 System.out.println("Editora: " + objetoListaLivro.getEditora());
                                 System.out.println();
                             }
-
                             break;
                         default:
                             System.out.println("Operação Inválida!");
                     }
+                    retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 9: // Menu 9 - Valor em caixa (dinheiro)
                     System.out.println("Dinheiro em caixa atualizado é R$ " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
+                    retornarMenuPrincipal (scanner, opcaoMenu);
+                    break;
+                case 10: // Menu 10 - Sair
+                    opcaoMenu = 10;
                     break;
                 default:
                     System.out.println("Operação Inválida");
             }
 
-            System.out.println("Deseja retornar ao menu principal? (S/N)");
-            String respostaRetornarMenu = scanner.nextLine();
-            
-            if (respostaRetornarMenu.equalsIgnoreCase("N")) {
-                opcaoMenu = 10;
-            }
-
-        } while (opcaoMenu != 10 && opcaoMenu <= 9);
+        } while (opcaoMenu != 10);
 
         System.out.println("Bye bye. Até a próxima!");
 
@@ -1088,6 +1089,16 @@ public class Principal {
         System.out.println("4 - Jogo");
         System.out.println("5 - Livro");
         System.out.println("Digite a opção:");
+    }
+
+    public static void retornarMenuPrincipal (Scanner scanner, Integer opcaoMenu) {
+        System.out.println("Deseja retornar ao menu principal? (S/N)");
+        scanner.nextLine();
+        String respostaRetornarMenu = scanner.nextLine();
+
+        if (respostaRetornarMenu.equalsIgnoreCase("N")) {
+            opcaoMenu = 10;
+        }
     }
 
 }
