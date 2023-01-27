@@ -53,6 +53,14 @@ public class FilmeHelper {
         }
     }
 
+    public static void removerFilme(Integer id) {
+        for (Filme objetoListaFilme: listaFilmes) {
+            if (id.equals(objetoListaFilme.getId())) {
+                listaFilmes.remove(objetoListaFilme);//retirado do estoque
+            }
+        }
+    }
+
     public static void exibirMenuAtributosFilme () {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();

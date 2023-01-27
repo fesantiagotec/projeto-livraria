@@ -45,6 +45,14 @@ public class BrinquedoHelper {
         }
     }
 
+    public static void removerBrinquedo (Integer id) {
+        for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
+            if (id.equals(objetoListaBrinquedo.getId())) {
+                listaBrinquedos.remove(objetoListaBrinquedo);//retirado do estoque
+            }
+        }
+    }
+
     public static void exibirMenuAtributosBrinquedo() {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();

@@ -396,11 +396,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            for (Brinquedo objetoListaBrinquedo: listaBrinquedos) {
-                                if (idProdutoRemover.equals(objetoListaBrinquedo.getId())) {
-                                    listaBrinquedos.remove(objetoListaBrinquedo);//retirado do estoque
-                                }
-                            }
+                            BrinquedoHelper.removerBrinquedo(idProdutoRemover);
+
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
                             BrinquedoHelper.imprimirListaBrinquedos();
@@ -416,11 +413,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            for (Filme objetoListaFilme: listaFilmes) {
-                                if (idProdutoRemover.equals(objetoListaFilme.getId())) {
-                                    listaFilmes.remove(objetoListaFilme);//retirado do estoque
-                                }
-                            }
+                            FilmeHelper.removerFilme(idProdutoRemover);
+
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
                             FilmeHelper.imprimirListaFilmes();
@@ -437,11 +431,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            for (Jogo objetoListaJogo: listaJogos) {
-                                if (idProdutoRemover.equals(objetoListaJogo.getId())) {
-                                    listaJogos.remove(objetoListaJogo);//retirado do estoque
-                                }
-                            }
+                            JogoHelper.removerJogo();
+
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Jogos em estoque");
                             JogoHelper.imprimirListaJogos();
@@ -459,11 +450,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            for (Livro objetoListaLivro: listaLivros) {
-                                if (idProdutoRemover.equals(objetoListaLivro.getId())) {
-                                    listaLivros.remove(objetoListaLivro);//retirado do estoque
-                                }
-                            }
+                            LivroHelper.removerLivro();
+                            
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Livros em estoque");
                             LivroHelper.imprimirListaLivros();

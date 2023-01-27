@@ -50,6 +50,14 @@ public class LivroHelper {
         }
     }
 
+    public static void removerLivro (Integer id) {
+        for (Livro objetoListaLivro: listaLivros) {
+            if (id.equals(objetoListaLivro.getId())) {
+                listaLivros.remove(objetoListaLivro);//retirado do estoque
+            }
+        }
+    }
+
     public static void exibirMenuAtributosLivro () {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();

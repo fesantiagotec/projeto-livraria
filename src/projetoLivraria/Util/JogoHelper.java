@@ -51,6 +51,14 @@ public class JogoHelper {
         }
     }
 
+    public static void removerJogo (Integer id) {
+        for (Jogo objetoListaJogo: listaJogos) {
+            if (id.equals(objetoListaJogo.getId())) {
+                listaJogos.remove(objetoListaJogo);//retirado do estoque
+            }
+        }
+    }
+
     public static void exibirMenuAtributosJogo() {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();
