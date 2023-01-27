@@ -128,7 +128,7 @@ public class Principal {
                             case 2:
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             System.out.println("Digite o ID do Brinquedo que deseja alterar dados:");
                             scanner.nextLine();
@@ -167,23 +167,14 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             System.out.println("Dado do Produto alterado com sucesso!");
                             break;
                         case 3:
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Filmes disponíveis em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
 
                             System.out.println("Digite o ID do Filme que deseja alterar dados:");
                             scanner.nextLine();
@@ -241,16 +232,7 @@ public class Principal {
 
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
 
                             System.out.println("Dado do Produto alterado com sucesso!");
                             break;
@@ -440,7 +422,7 @@ public class Principal {
                         case 2:
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             System.out.println("Digite o ID do Brinquedo que deseja remover:");
                             scanner.nextLine();
@@ -453,23 +435,14 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             System.out.println("Produto removido com sucesso!");
                             break;
                         case 3:
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Filmes disponíveis em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
 
                             System.out.println("Digite o ID do Filme que deseja remover:");
                             scanner.nextLine();
@@ -482,16 +455,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
 
                             System.out.println("Produto removido com sucesso!");
                             break;
@@ -586,20 +550,11 @@ public class Principal {
                             break;
                         case 2:
                             System.out.println("----------> Lista de Brinquedos <----------");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
                             break;
                         case 3:
                             System.out.println("----------> Lista de Filmes <----------");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
                             break;
                         case 4:
                             System.out.println("----------> Lista de Jogos <----------");
@@ -669,18 +624,9 @@ public class Principal {
 
                     AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
-                    BrinquedoHelper.imprimirListaBrinquedo();
+                    BrinquedoHelper.imprimirListaBrinquedos();
 
-                    for (Filme objetoListaFilme : listaFilmes) {
-                        System.out.println("Id: " + objetoListaFilme.getId());
-                        System.out.println("Nome: " + objetoListaFilme.getNome());
-                        System.out.println("Preço: " + objetoListaFilme.getPreco());
-                        System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                        System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                        System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                        System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                        System.out.println();
-                    }
+                    FilmeHelper.imprimirListaFilmes();
 
                     for (Jogo objetoListaJogo : listaJogos) {
                         System.out.println("Id: " + objetoListaJogo.getId());
@@ -710,19 +656,10 @@ public class Principal {
                     AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                     System.out.println("-----> Lista de Brinquedos <-----");
-                    BrinquedoHelper.imprimirListaBrinquedo();
+                    BrinquedoHelper.imprimirListaBrinquedos();
 
                     System.out.println("-----> Lista de Filmes <-----");
-                    for (Filme objetoListaFilme : listaFilmes) {
-                        System.out.println("Id: " + objetoListaFilme.getId());
-                        System.out.println("Nome: " + objetoListaFilme.getNome());
-                        System.out.println("Preço: " + objetoListaFilme.getPreco());
-                        System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                        System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                        System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                        System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                        System.out.println();
-                    }
+                    FilmeHelper.imprimirListaFilmes();
 
                     System.out.println("-----> Lista de Jogos <-----");
 
@@ -778,7 +715,7 @@ public class Principal {
                             break;
                         case 2:
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             System.out.println("Digite o ID do brinquedo que deseja comprar:");
                             scanner.nextLine();
@@ -794,21 +731,13 @@ public class Principal {
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            BrinquedoHelper.imprimirListaBrinquedo();
+                            BrinquedoHelper.imprimirListaBrinquedos();
 
                             break;
                         case 3:
                             System.out.println("Lista de Filmes disponíveis em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
+
                             System.out.println("Digite o ID do filme que deseja comprar:");
                             scanner.nextLine();
                             idProdutoCompra = scanner.nextInt();
@@ -823,16 +752,8 @@ public class Principal {
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
-                            for (Filme objetoListaFilme : listaFilmes) {
-                                System.out.println("Id: " + objetoListaFilme.getId());
-                                System.out.println("Nome: " + objetoListaFilme.getNome());
-                                System.out.println("Preço: " + objetoListaFilme.getPreco());
-                                System.out.println("Estudio: " + objetoListaFilme.getEstudio());
-                                System.out.println("Diretor: " + objetoListaFilme.getDiretor());
-                                System.out.println("Gênero: " + objetoListaFilme.getGenero());
-                                System.out.println("Produtor: " + objetoListaFilme.getProdutor());
-                                System.out.println();
-                            }
+                            FilmeHelper.imprimirListaFilmes();
+                            
                             break;
                         case 4:
 

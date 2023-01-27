@@ -40,6 +40,19 @@ public class FilmeHelper {
 
     }
 
+    public static void imprimirListaFilmes() {
+        for (Filme objetoListaFilme : listaFilmes) {
+            System.out.println("Id: " + objetoListaFilme.getId());
+            System.out.println("Nome: " + objetoListaFilme.getNome());
+            System.out.println("Preço: " + objetoListaFilme.getPreco());
+            System.out.println("Estudio: " + objetoListaFilme.getEstudio());
+            System.out.println("Diretor: " + objetoListaFilme.getDiretor());
+            System.out.println("Gênero: " + objetoListaFilme.getGenero());
+            System.out.println("Produtor: " + objetoListaFilme.getProdutor());
+            System.out.println();
+        }
+    }
+
     public static void exibirMenuAtributosFilme () {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();

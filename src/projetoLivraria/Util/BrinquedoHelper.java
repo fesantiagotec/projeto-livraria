@@ -35,7 +35,7 @@ public class BrinquedoHelper {
 
     }
 
-    public static void imprimirListaBrinquedo () {
+    public static void imprimirListaBrinquedos () {
         for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
             System.out.println("Id: " + objetoListaBrinquedo.getId());
             System.out.println("Nome: " + objetoListaBrinquedo.getNome());
