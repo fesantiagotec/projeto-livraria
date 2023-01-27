@@ -431,7 +431,7 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            JogoHelper.removerJogo();
+                            JogoHelper.removerJogo(idProdutoRemover);
 
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Jogos em estoque");
@@ -450,8 +450,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            LivroHelper.removerLivro();
-                            
+                            LivroHelper.removerLivro(idProdutoRemover);
+
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Livros em estoque");
                             LivroHelper.imprimirListaLivros();
