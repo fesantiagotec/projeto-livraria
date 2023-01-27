@@ -2,16 +2,20 @@ package projetoLivraria.Util;
 
 import projetoLivraria.Produtos.Brinquedo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class BrinquedoHelper {
 
-    public static Brinquedo cadastrarBrinquedo (Scanner scanner, Integer contId, List listaBrinquedos) {
+    private static List<Brinquedo> listaBrinquedos = new ArrayList();
+    private static Integer contID = 1;
+
+    public static void cadastrarBrinquedo (Scanner scanner) {
 
         Brinquedo brinquedo = new Brinquedo();
 
-        brinquedo.setId(contId + 1);
+        brinquedo.setId(contID);
 
         System.out.println("Qual o nome do brinquedo que deseja cadastrar?");
         scanner.nextLine();
@@ -27,7 +31,8 @@ public class BrinquedoHelper {
         System.out.println("Produto cadastrado com sucesso!");
         System.out.println();
 
-        return brinquedo;
+        contID++;
+
     }
 
     public static void exibirMenuAtributosBrinquedo() {

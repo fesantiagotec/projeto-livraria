@@ -9,14 +9,15 @@ import java.util.Scanner;
 public class AlbumDeMusicaHelper {
 
     private static Scanner scanner;
-    private List<AlbumDeMusica> listaAlbunsDeMusica = new ArrayList<>();
-    public static Integer contID = 0;
-    Scanner sc = new Scanner(System.in);
 
-    public static AlbumDeMusica cadastrarAlbumDeMusica (Scanner scanner, Integer contId, List listaAlbunsDeMusica) {
+    //Criando a lista de objetos por categoria
+    private static List<AlbumDeMusica> listaAlbunsDeMusica = new ArrayList<>();
+    public static Integer contID = 1;
+
+    public static void cadastrarAlbumDeMusica (Scanner scanner) {
         AlbumDeMusica musica = new AlbumDeMusica();
 
-        musica.setId(contId + 1);
+        musica.setId(contID);
 
         System.out.println("Qual o nome da música que deseja cadastrar?");
         scanner.nextLine();
@@ -36,7 +37,29 @@ public class AlbumDeMusicaHelper {
         System.out.println("Produto cadastrado com sucesso!");
         System.out.println();
 
-        return musica;
+        contID++;
+    }
+
+    public static void imprimirListaAlbumDeMusica () {
+        for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
+            System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
+            System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
+            System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
+            System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
+            System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
+            System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
+            System.out.println();
+        }
+    }
+
+    public static void removerMusica (Integer id) {
+        for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
+            if (id.equals(objetoListaAlbumDeMusica.getId())) {
+                listaAlbunsDeMusica.remove(objetoListaAlbumDeMusica);//retirado do estoque
+                System.out.println("Produto removido com sucesso!");
+                break;
+            }
+        }
     }
 
     public static void exibirMenuAtributosAlbumDeMusica () {

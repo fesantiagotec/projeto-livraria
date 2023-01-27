@@ -2,16 +2,19 @@ package projetoLivraria.Util;
 
 import projetoLivraria.Produtos.Filme;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class FilmeHelper {
 
-    public static Filme cadastrarFilme (Scanner scanner,Integer contId, List listaFilmes) {
+    private static List<Filme> listaFilmes = new ArrayList();
+    private static Integer contID = 1;
+    public static void cadastrarFilme (Scanner scanner) {
 
         Filme filme = new Filme();
 
-        filme.setId(contId + 1);
+        filme.setId(contID);
 
         System.out.println("Qual o nome do filme que deseja cadastrar?");
         scanner.nextLine();
@@ -33,7 +36,8 @@ public class FilmeHelper {
         System.out.println("Produto cadastrado com sucesso!");
         System.out.println();
 
-        return filme;
+        contID++;
+
     }
 
     public static void exibirMenuAtributosFilme () {

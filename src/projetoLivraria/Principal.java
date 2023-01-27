@@ -38,28 +38,24 @@ public class Principal {
 
                     switch (opcaoCategoria) {
                         case 1:
-                            AlbumDeMusicaHelper.cadastrarAlbumDeMusica(scanner, contId, listaAlbunsDeMusica);
-                            contId = contId + 1;
+                            AlbumDeMusicaHelper.cadastrarAlbumDeMusica(scanner);
                             break;
                         case 2:
-                            BrinquedoHelper.cadastrarBrinquedo(scanner, contId, listaBrinquedos);
-                            contId = contId + 1;
+                            BrinquedoHelper.cadastrarBrinquedo(scanner);
                             break;
                         case 3:
-                            FilmeHelper.cadastrarFilme(scanner,contId, listaFilmes);
-                            contId = contId + 1;
+                            FilmeHelper.cadastrarFilme(scanner);
                             break;
                         case 4:
-                            JogoHelper.cadastrarJogo(scanner,contId, listaJogos);
-                            contId = contId + 1;
+                            JogoHelper.cadastrarJogo(scanner);
                             break;
                         case 5:
-                            LivroHelper.cadastrarLivro(scanner, contId, listaLivros);
-                            contId = contId + 1;
+                            LivroHelper.cadastrarLivro(scanner);
                             break;
                         default:
                             System.out.println("Operação Inválida!");
                     }
+
                     retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 2: //Menu 2 - Alterar produto cadastrado
@@ -75,15 +71,7 @@ public class Principal {
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Albuns de Música disponíveis em estoque");
 
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                             System.out.println("Digite o ID do Álbum de Músicas que deseja alterar dados:");
                             scanner.nextLine();
@@ -470,11 +458,8 @@ public class Principal {
                             scanner.nextLine();
                             idProdutoRemover = scanner.nextInt();
 
-                            for (AlbumDeMusica objetoListaAlbumDeMusica: listaAlbunsDeMusica) {
-                                if (idProdutoRemover.equals(objetoListaAlbumDeMusica.getId())) {
-                                    listaAlbunsDeMusica.remove(objetoListaAlbumDeMusica);//retirado do estoque
-                                }
-                            }
+                            AlbumDeMusicaHelper.removerMusica(idProdutoRemover);
+
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
                             for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
@@ -1094,11 +1079,9 @@ public class Principal {
     public static void retornarMenuPrincipal (Scanner scanner, Integer opcaoMenu) {
         System.out.println("Deseja retornar ao menu principal? (S/N)");
         String respostaRetornarMenu = scanner.nextLine();
-        scanner.nextLine();
 
         if (respostaRetornarMenu.equalsIgnoreCase("N")) {
             opcaoMenu = 10;
         }
     }
-
 }

@@ -2,16 +2,20 @@ package projetoLivraria.Util;
 
 import projetoLivraria.Produtos.Jogo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class JogoHelper {
 
-    public static Jogo cadastrarJogo (Scanner scanner,Integer contId, List listaJogos) {
+    private static List<Jogo> listaJogos = new ArrayList();
+    private static Integer contID = 1;
+
+    public static void cadastrarJogo (Scanner scanner) {
 
         Jogo jogo = new Jogo();
 
-        jogo.setId(contId + 1);
+        jogo.setId(contID);
 
         System.out.println("Qual o nome do jogo que deseja cadastrar?");
         scanner.nextLine();
@@ -31,7 +35,8 @@ public class JogoHelper {
         System.out.println("Produto cadastrado com sucesso!");
         System.out.println();
 
-        return jogo;
+        contID++;
+
     }
 
     public static void exibirMenuAtributosJogo() {

@@ -2,16 +2,20 @@ package projetoLivraria.Util;
 
 import projetoLivraria.Produtos.Livro;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class LivroHelper {
 
-    public static Livro cadastrarLivro (Scanner scanner, Integer contId, List listaLivros) {
+    private static List<Livro> listaLivros = new ArrayList();
+    private static Integer contID = 1;
+
+    public static void cadastrarLivro (Scanner scanner) {
 
         Livro livro = new Livro();
 
-        livro.setId(contId + 1);
+        livro.setId(contID);
 
         System.out.println("Qual o nome do livro que deseja cadastrar?");
         scanner.nextLine();
@@ -31,7 +35,8 @@ public class LivroHelper {
         System.out.println("Produto cadastrado com sucesso!");
         System.out.println();
 
-        return livro;
+        contID++;
+
     }
 
     public static void exibirMenuAtributosLivro () {
