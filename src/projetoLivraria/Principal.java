@@ -123,15 +123,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                             break;
                             case 2:
@@ -444,15 +436,7 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Albuns de Música disponíveis em estoque");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                             System.out.println("Digite o ID do Álbum de Músicas que deseja remover:");
                             scanner.nextLine();
@@ -462,15 +446,7 @@ public class Principal {
 
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                             System.out.println("Produto removido com sucesso!");
                             break;
@@ -631,15 +607,7 @@ public class Principal {
                     switch (opcaoCategoria) {
                         case 1:
                             System.out.println("----------> Lista de Albuns de Música <----------");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
                             break;
                         case 2:
                             System.out.println("----------> Lista de Brinquedos <----------");
@@ -730,15 +698,7 @@ public class Principal {
                 case 6: // Menu 6 - Visualizar listagem completa de produtos em estoque (geral)
                     System.out.println("-----> Lista completa de produtos em estoque (geral) <-----");
 
-                    for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                        System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                        System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                        System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                        System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                        System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                        System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                        System.out.println();
-                    }
+                    AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                     for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
                         System.out.println("Id: " + objetoListaBrinquedo.getId());
@@ -784,15 +744,7 @@ public class Principal {
                     System.out.println("-----> Lista completa de produtos em estoque (por categoria) <-----");
 
                     System.out.println("-----> Lista de Albuns de Música <-----");
-                    for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                        System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                        System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                        System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                        System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                        System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                        System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                        System.out.println();
-                    }
+                    AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                     System.out.println("-----> Lista de Brinquedos <-----");
                     for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
@@ -848,15 +800,8 @@ public class Principal {
                     switch (opcaoCategoria) {
                         case 1:
                             System.out.println("Lista de Albuns de Música disponíveis em estoque");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
+
                             System.out.println("Digite o ID do Álbum de Músicas que deseja comprar:");
                             scanner.nextLine();
                             idProdutoCompra = scanner.nextInt();
@@ -871,15 +816,8 @@ public class Principal {
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
-                            for (AlbumDeMusica objetoListaAlbumDeMusica : listaAlbunsDeMusica) {
-                                System.out.println("Id: " + objetoListaAlbumDeMusica.getId());
-                                System.out.println("Nome: " + objetoListaAlbumDeMusica.getNome());
-                                System.out.println("Preço: " + objetoListaAlbumDeMusica.getPreco());
-                                System.out.println("Músicos da Banda: " + objetoListaAlbumDeMusica.getMusicosBanda());
-                                System.out.println("Gênero: " + objetoListaAlbumDeMusica.getGenero());
-                                System.out.println("Selo: " + objetoListaAlbumDeMusica.getSelo());
-                                System.out.println();
-                            }
+                            AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
+                            
                             break;
                         case 2:
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
