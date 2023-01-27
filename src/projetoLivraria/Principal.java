@@ -240,15 +240,7 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Jogos disponíveis em estoque");
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             System.out.println("Digite o ID do Jogo que deseja alterar dados:");
                             scanner.nextLine();
@@ -300,15 +292,7 @@ public class Principal {
 
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Jogos em estoque");
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             System.out.println("Dado do Produto alterado com sucesso!");
 
@@ -463,15 +447,7 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Jogos disponíveis em estoque");
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             System.out.println("Digite o ID do Jogo que deseja remover:");
                             scanner.nextLine();
@@ -484,15 +460,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Jogos em estoque");
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             System.out.println("Produto removido com sucesso!");
 
@@ -558,16 +526,7 @@ public class Principal {
                             break;
                         case 4:
                             System.out.println("----------> Lista de Jogos <----------");
-
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             break;
                         case 5:
@@ -628,15 +587,7 @@ public class Principal {
 
                     FilmeHelper.imprimirListaFilmes();
 
-                    for (Jogo objetoListaJogo : listaJogos) {
-                        System.out.println("Id: " + objetoListaJogo.getId());
-                        System.out.println("Nome: " + objetoListaJogo.getNome());
-                        System.out.println("Preço: " + objetoListaJogo.getPreco());
-                        System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                        System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                        System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                        System.out.println();
-                    }
+                    JogoHelper.imprimirListaJogos();
 
                     for (Livro objetoListaLivro : listaLivros) {
                         System.out.println("Id: " + objetoListaLivro.getId());
@@ -662,16 +613,7 @@ public class Principal {
                     FilmeHelper.imprimirListaFilmes();
 
                     System.out.println("-----> Lista de Jogos <-----");
-
-                    for (Jogo objetoListaJogo : listaJogos) {
-                        System.out.println("Id: " + objetoListaJogo.getId());
-                        System.out.println("Nome: " + objetoListaJogo.getNome());
-                        System.out.println("Preço: " + objetoListaJogo.getPreco());
-                        System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                        System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                        System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                        System.out.println();
-                    }
+                    JogoHelper.imprimirListaJogos();
 
                     System.out.println("-----> Lista de Livros <-----");
                     for (Livro objetoListaLivro : listaLivros) {
@@ -753,21 +695,11 @@ public class Principal {
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
                             FilmeHelper.imprimirListaFilmes();
-                            
+
                             break;
                         case 4:
-
                             System.out.println("Lista de Jogos disponíveis em estoque");
-
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            JogoHelper.imprimirListaJogos();
 
                             System.out.println("Digite o ID do jogo que deseja comprar:");
                             scanner.nextLine();
@@ -782,16 +714,8 @@ public class Principal {
 
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
-                            System.out.println("Reimpressão de Lista de Filmes em estoque");
-                            for (Jogo objetoListaJogo : listaJogos) {
-                                System.out.println("Id: " + objetoListaJogo.getId());
-                                System.out.println("Nome: " + objetoListaJogo.getNome());
-                                System.out.println("Preço: " + objetoListaJogo.getPreco());
-                                System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
-                                System.out.println("Gênero: " + objetoListaJogo.getGenero());
-                                System.out.println("Estudio: " + objetoListaJogo.getEstudio());
-                                System.out.println();
-                            }
+                            System.out.println("Reimpressão de Lista de Jogos em estoque");
+                            JogoHelper.imprimirListaJogos();
 
                             break;
                         case 5:

@@ -39,6 +39,18 @@ public class JogoHelper {
 
     }
 
+    public static void imprimirListaJogos() {
+        for (Jogo objetoListaJogo : listaJogos) {
+            System.out.println("Id: " + objetoListaJogo.getId());
+            System.out.println("Nome: " + objetoListaJogo.getNome());
+            System.out.println("Preço: " + objetoListaJogo.getPreco());
+            System.out.println("Distribuidora: " + objetoListaJogo.getDistribuidora());
+            System.out.println("Gênero: " + objetoListaJogo.getGenero());
+            System.out.println("Estudio: " + objetoListaJogo.getEstudio());
+            System.out.println();
+        }
+    }
+
     public static void exibirMenuAtributosJogo() {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();
