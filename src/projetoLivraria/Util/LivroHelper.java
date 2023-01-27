@@ -38,6 +38,17 @@ public class LivroHelper {
         contID++;
 
     }
+    public static void imprimirListaLivros(){
+        for (Livro objetoListaLivro : listaLivros) {
+            System.out.println("Id: " + objetoListaLivro.getId());
+            System.out.println("Nome: " + objetoListaLivro.getNome());
+            System.out.println("Preço: " + objetoListaLivro.getPreco());
+            System.out.println("Gênero: " + objetoListaLivro.getGenero());
+            System.out.println("Escritor: " + objetoListaLivro.getEscritor());
+            System.out.println("Editora: " + objetoListaLivro.getEditora());
+            System.out.println();
+        }
+    }
 
     public static void exibirMenuAtributosLivro () {
         System.out.println("Produto encontrado no estoque!");

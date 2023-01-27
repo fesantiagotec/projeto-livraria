@@ -301,15 +301,7 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Livros disponíveis em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             System.out.println("Digite o ID do Livro que deseja alterar dados:");
                             scanner.nextLine();
@@ -361,15 +353,7 @@ public class Principal {
 
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Livros em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             System.out.println("Dado do Produto alterado com sucesso!");
                             break;
@@ -469,15 +453,7 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Livros disponíveis em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             System.out.println("Digite o ID do Livro que deseja remover:");
                             scanner.nextLine();
@@ -490,15 +466,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Livros em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             System.out.println("Produto removido com sucesso!");
                             break;
@@ -531,15 +499,7 @@ public class Principal {
                             break;
                         case 5:
                             System.out.println("----------> Lista de Livros <----------");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             break;
                         default:
@@ -589,15 +549,8 @@ public class Principal {
 
                     JogoHelper.imprimirListaJogos();
 
-                    for (Livro objetoListaLivro : listaLivros) {
-                        System.out.println("Id: " + objetoListaLivro.getId());
-                        System.out.println("Nome: " + objetoListaLivro.getNome());
-                        System.out.println("Preço: " + objetoListaLivro.getPreco());
-                        System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                        System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                        System.out.println("Editora: " + objetoListaLivro.getEditora());
-                        System.out.println();
-                    }
+                    LivroHelper.imprimirListaLivros();
+
                     retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 7: // Menu 7 - Visualizar listagem de produtos em estoque (por categoria)
@@ -616,15 +569,8 @@ public class Principal {
                     JogoHelper.imprimirListaJogos();
 
                     System.out.println("-----> Lista de Livros <-----");
-                    for (Livro objetoListaLivro : listaLivros) {
-                        System.out.println("Id: " + objetoListaLivro.getId());
-                        System.out.println("Nome: " + objetoListaLivro.getNome());
-                        System.out.println("Preço: " + objetoListaLivro.getPreco());
-                        System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                        System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                        System.out.println("Editora: " + objetoListaLivro.getEditora());
-                        System.out.println();
-                    }
+                    LivroHelper.imprimirListaLivros();
+
                     retornarMenuPrincipal (scanner, opcaoMenu);
                     break;
                 case 8: // Menu 8 - Realizar compra
@@ -720,15 +666,7 @@ public class Principal {
                             break;
                         case 5:
                             System.out.println("Lista de Livro disponíveis em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
 
                             System.out.println("Digite o ID do livro que deseja comprar:");
                             scanner.nextLine();
@@ -744,15 +682,7 @@ public class Principal {
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Filmes em estoque");
-                            for (Livro objetoListaLivro : listaLivros) {
-                                System.out.println("Id: " + objetoListaLivro.getId());
-                                System.out.println("Nome: " + objetoListaLivro.getNome());
-                                System.out.println("Preço: " + objetoListaLivro.getPreco());
-                                System.out.println("Gênero: " + objetoListaLivro.getGenero());
-                                System.out.println("Escritor: " + objetoListaLivro.getEscritor());
-                                System.out.println("Editora: " + objetoListaLivro.getEditora());
-                                System.out.println();
-                            }
+                            LivroHelper.imprimirListaLivros();
                             break;
                         default:
                             System.out.println("Operação Inválida!");
