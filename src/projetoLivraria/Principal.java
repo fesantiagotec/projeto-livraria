@@ -70,7 +70,6 @@ public class Principal {
 
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Albuns de Música disponíveis em estoque");
-
                             AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                             System.out.println("Digite o ID do Álbum de Músicas que deseja alterar dados:");
@@ -129,13 +128,7 @@ public class Principal {
                             case 2:
                             //Imprimindo a lista atual antes da alteração
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
 
                             System.out.println("Digite o ID do Brinquedo que deseja alterar dados:");
                             scanner.nextLine();
@@ -174,13 +167,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi alterado
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
 
                             System.out.println("Dado do Produto alterado com sucesso!");
                             break;
@@ -453,13 +440,7 @@ public class Principal {
                         case 2:
                             //Imprimindo a lista atual antes da remoção (o que há no estoque)
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
 
                             System.out.println("Digite o ID do Brinquedo que deseja remover:");
                             scanner.nextLine();
@@ -472,13 +453,7 @@ public class Principal {
                             }
                             //Reimprimir só para conferir que foi retirado
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
 
                             System.out.println("Produto removido com sucesso!");
                             break;
@@ -611,13 +586,7 @@ public class Principal {
                             break;
                         case 2:
                             System.out.println("----------> Lista de Brinquedos <----------");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
                             break;
                         case 3:
                             System.out.println("----------> Lista de Filmes <----------");
@@ -700,13 +669,7 @@ public class Principal {
 
                     AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
-                    for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                        System.out.println("Id: " + objetoListaBrinquedo.getId());
-                        System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                        System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                        System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                        System.out.println();
-                    }
+                    BrinquedoHelper.imprimirListaBrinquedo();
 
                     for (Filme objetoListaFilme : listaFilmes) {
                         System.out.println("Id: " + objetoListaFilme.getId());
@@ -747,13 +710,7 @@ public class Principal {
                     AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
 
                     System.out.println("-----> Lista de Brinquedos <-----");
-                    for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                        System.out.println("Id: " + objetoListaBrinquedo.getId());
-                        System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                        System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                        System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                        System.out.println();
-                    }
+                    BrinquedoHelper.imprimirListaBrinquedo();
 
                     System.out.println("-----> Lista de Filmes <-----");
                     for (Filme objetoListaFilme : listaFilmes) {
@@ -817,17 +774,12 @@ public class Principal {
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Álbum de Música em estoque");
                             AlbumDeMusicaHelper.imprimirListaAlbumDeMusica();
-                            
+
                             break;
                         case 2:
                             System.out.println("Lista de Brinquedos disponíveis em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
+
                             System.out.println("Digite o ID do brinquedo que deseja comprar:");
                             scanner.nextLine();
                             idProdutoCompra = scanner.nextInt();
@@ -842,13 +794,8 @@ public class Principal {
                             System.out.println("Compra realizada com sucesso!");
                             System.out.println("Dinheiro em caixa atualizado " + caixaDaEmpresa.getDinheiroEmCaixaDaEmpresa());
                             System.out.println("Reimpressão de Lista de Brinquedos em estoque");
-                            for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
-                                System.out.println("Id: " + objetoListaBrinquedo.getId());
-                                System.out.println("Nome: " + objetoListaBrinquedo.getNome());
-                                System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
-                                System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
-                                System.out.println();
-                            }
+                            BrinquedoHelper.imprimirListaBrinquedo();
+
                             break;
                         case 3:
                             System.out.println("Lista de Filmes disponíveis em estoque");

@@ -35,6 +35,16 @@ public class BrinquedoHelper {
 
     }
 
+    public static void imprimirListaBrinquedo () {
+        for (Brinquedo objetoListaBrinquedo : listaBrinquedos) {
+            System.out.println("Id: " + objetoListaBrinquedo.getId());
+            System.out.println("Nome: " + objetoListaBrinquedo.getNome());
+            System.out.println("Preço: " + objetoListaBrinquedo.getPreco());
+            System.out.println("Tipo: " + objetoListaBrinquedo.getTipo());
+            System.out.println();
+        }
+    }
+
     public static void exibirMenuAtributosBrinquedo() {
         System.out.println("Produto encontrado no estoque!");
         System.out.println();
